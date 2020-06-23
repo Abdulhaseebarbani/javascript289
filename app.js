@@ -3,7 +3,8 @@
 
 // var fname =prompt("Enter First Name","Your First Name")
 // var lname =prompt("Enter Last Name","Your Last Name")
-// alert("Welcome Mr."+ fname +' '+ lname)
+// var fullName = fname+ " " + lname
+// alert("Welcome Mr." + fullName)
 // Chapter 21-25 task 2
 // Favorite Mobile
 // var fm = prompt("Which is your Favorite Phone","enter model also")
@@ -33,7 +34,8 @@
 // Q1 using concat 
 // var firstName =prompt("Enter First Name","Your First Name")
 // var lastName =prompt("Enter Last Name","Your Last Name")
-// document.write('Full Name: '+ firstName.concat(lastName));
+// var fullName = firstName.concat(lastName);
+// document.write('Full Name: '+ fullName );
 // Chapter 21-25 task 7
 // Replace words
 // var x= "Hyderabad"
@@ -101,7 +103,7 @@
 // Chapter 21-25 task 15
 // Enter Valid Password
 // var p= prompt("Enter Your Password")
-//  var Password = /^[A-Za-z]\w{6,}$/;
+//  var Password = /^[A-Za-z]\w{6,\}$/;
 //  if (p.match(Password)){
 //      alert('Password approved')
 //  }
@@ -110,10 +112,11 @@
 //  }
 
 // Chapter 21-25 task 16
-// Split method
-var university = 'University of Karachi'
-university = university.split();
-alert(university)
+// // Split "method
+// var msg = 'University of Karachi'
+// for (var i = 0 ; i < msg.length ; i++){
+//     document.write(msg[i] + "<br>")
+// }
 // Chapter 21-25 task 17
 // Last character of input
 // var x= prompt("Enter Name")
@@ -122,9 +125,10 @@ alert(university)
 // document.write('Last character of input: '+ y)
 // Chapter 21-25 task 18
 // Occurence of the
-// var text= "The quick brown fox jumps over the lazy dog"
-// var text = text.slice(0, 6);
-// alert(text)
+// var text = "the quick brown fox jumps over the lazy dog.";
+// var text = text.toLowerCase();
+// var count = (text.match(/the/g) || []).length;
+// document.write('Text: The quick brown fox jumps over the lazy dog <br> There are ' + count + ' occurence(s) of word "the"');
 
 
 // chapter 26-30 task 1
@@ -320,3 +324,178 @@ alert(university)
 // document.write('Net amount Payable (within Due Date): '+ net +'<br>');
 // document.write('Late Payment surcharge: '+ late +'<br>');
 // document.write('Gross Amount Payable (after Due Date): '+ gross +'<br>');
+
+// chapter 35-38 task 1
+// Date and time  
+// function date(){
+//     document.write(new Date())
+// }
+// date()
+// chapter 35-38 task 2
+// Greet user
+// function greet(a,b){
+//     alert('Welcome '+ a + ' ' + b)
+// }
+// greet(prompt("Enter First Name"),prompt("Enter Last Name"))
+// chapter 35-38 task 3
+// Sum of 2 numbers
+//  function add(a,b){
+//      alert(a+b)
+//  }
+//  add (+prompt("Enter Value 1"),+prompt("Enter value 2"))
+// chapter 35-38 task 4
+// Calculator
+// function calc(num1,opr,num2){
+//     if (opr === "+"){
+//         return num1 + num2
+//     }
+//     else 
+//     if (opr === "-"){
+//         return num1 - num2
+//     }
+//     else
+//     if (opr === "*"){
+//         return num1 * num2
+//     }
+//     else
+//     if (opr === "/"){
+//         return num1/num2
+//     }
+//     else {
+//         return "Incorrect operator"
+//     }
+// }
+// var num1 =  +prompt("Enter Value 1")
+// var opr = prompt("Enter Operator")
+// var num2 = +prompt("Enter Value 2")
+//  var result = calc(num1,opr,num2)
+//  document.write('Result: '+ result)
+
+// chapter 35-38 task 5
+// Square of argument
+// function squ (a){
+//     alert(a*a)
+// }
+// var a = +prompt("Enter Value") 
+// squ (a)
+
+// chapter 35-38 task 6
+// factorial of a number
+// function factorial(x) 
+// { 
+//   if (x === 0)
+//  {
+//     return 1;
+//  }
+//   return x * factorial(x-1);
+         
+// }
+// var x = factorial(prompt("Enter the number"))
+// alert(x)
+// chapter 35-38 task 7
+// Counting from one to another
+// function count(a,b) {
+//     for(var i = a; i <= b ; i++) {
+//     document.write(i + '<br>');
+//     }
+// }
+// var a= prompt("Enter start Value")
+// var b= prompt("Enter end Value")
+// count(a,b);
+
+// chapter 35-38 task 8
+// Hypotenus
+// function calcHypotenus(base,  per) {
+//     return Math.sqrt(base*base  + per*per) ;
+// }
+// var base = +prompt("Enter Base")
+// var per = +prompt("Enter perpendicular")
+// document.write('Hypotenus of right angle traingle is: '+calcHypotenus(base,per))
+
+// chapter 35-38 task 9
+// Area
+// function area(w,h){
+//     return w*h
+// }
+// document.write('Area of Rectangle(in value) is: '+ area(3,5)+ '<br>')
+// var w = prompt("Enter Width of rectangle")
+// var h = prompt("Enter Height of rectangle")
+// document.write('Area of Rectangle(in variable) is '+ w +'*'+ h +':' + area(w,h))
+
+// chapter 35-38 task 10
+// palindrome
+// function pal(str) {
+//     var re = /[^A-Za-z0-9]/g;
+//     str = str.toLowerCase().replace(re, '');
+//     var len = str.length;
+//     for (var i = 0; i < len/2; i++) {
+//       if (str[i] !== str[len - 1 - i]) {
+//           return document.write(str + ' is not a palindrome word');
+//       }
+//     }
+//     return document.write(str + ' is a palindrome word');
+//    }
+//    var str = prompt("Enter word to find palindrome")
+//    pal(str)
+// chapter 35-38 task 11
+// convert first letter of each word
+// function uppercase(str) {
+//     str = str.toLowerCase().split(' ');
+//     for (var i = 0; i < str.length; i++) {
+//       str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+//     }
+//     return document.write('EXAMPLE STRING: "the quick brown fox" <br> EXPECTED OUTPUT: ' + str.join(' '))
+//   }
+//   var str = "the quick brown fox"
+//   uppercase(str);
+// chapter 35-38 task 12
+//  longest word
+// function longestword(str)
+// {
+//   var arr = str.match(/\w[a-z]{0,}/gi);
+//   var result = arr[0];
+
+//   for(var x = 1 ; x < arr.length ; x++)
+//   {
+//     if(result.length < arr[x].length)
+//     {
+//     result = arr[x];
+//     } 
+//   }
+//   return result;
+// }
+// document.write('EXAMPLE STRING: "Web Development Tutorial" <br> EXPECTED OUTPUT: '+(longestword('Web Development Tutorial')))
+
+// chapter 35-38 task 13
+// occurence of a word countvar string = "I am amazing";
+
+// function occ (arg) {
+//     var cnt = 0;
+//     for(var i=0; i<string.length; i++) {
+//         if(string[i] === arg) {
+//           cnt++;
+//       }
+//     }
+//     return cnt;
+//   }
+//   var arg = "'JSResources'"
+//   var word = "o"
+//   var string = arg;
+//   document.write('sample argunments: '+ arg +', '+ word + '<br>occurance of '+ word+' is: ' + occ(word))
+// chapter 35-38 task 14
+// properties of circle
+// circumferance
+// function calcCircumference(r,p){
+//     return 2*p*r
+// }
+// var r = +prompt("Enter Radius of Circle")
+// var p = 3.142;
+// document.write('The Circumferance of Circle is: ' + Math.round(calcCircumference(r,p)))
+// // Area
+// function calcArea(r,p){
+//     return p*r**2
+// }
+
+// var r = +prompt("Enter Radius of Circle")
+// var p = 3.142;
+// document.write('<br>The Area of Circle is: ' + Math.round(calcArea(r,p)))
